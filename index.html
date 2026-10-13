@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Surat Cinta Virtual ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hati yang berjatuhan -->
+    <div id="heart-container"></div>
+
+    <!-- Halaman utama -->
+    <main class="container">
+
+        <section class="card" id="form-card">
+
+            <div class="main-heart">💗</div>
+
+            <h1>Surat Cinta Virtual</h1>
+
+            <p class="subtitle">
+                Sebuah surat kecil untuk seseorang
+                yang sangat berarti di hatimu ❤️
+            </p>
+
+            <form id="love-form">
+
+                <label for="your-name">
+                    Nama Kamu
+                </label>
+
+                <input
+                    type="text"
+                    id="your-name"
+                    placeholder="Masukkan nama kamu..."
+                    maxlength="60"
+                    required
+                >
+
+                <label for="partner-name">
+                    Nama Pasangan Kamu
+                </label>
+
+                <input
+                    type="text"
+                    id="partner-name"
+                    placeholder="Masukkan nama pasangan..."
+                    maxlength="60"
+                    required
+                >
+
+                <label for="anniversary">
+                    Tanggal Jadian
+                </label>
+
+                <input
+                    type="date"
+                    id="anniversary"
+                    required
+                >
+
+                <button type="submit" class="open-button">
+                    💌 Buka Surat Cinta
+                </button>
+
+            </form>
+
+            <p class="footer-text">
+                Dibuat dengan sepenuh hati ❤️
+            </p>
+
+        </section>
+
+
+        <!-- Halaman surat cinta -->
+        <section class="card letter-card"
+                 id="letter-card"
+                 hidden>
+
+            <div class="envelope">💌</div>
+
+            <h1>Untuk Kamu, Sayang ❤️</h1>
+
+            <p id="greeting" class="greeting"></p>
+
+            <div class="letter-content" id="letter-content">
+            </div>
+
+            <div class="counter-box">
+
+                <span>💖</span>
+
+                <p>
+                    Kita telah bersama selama
+                    <strong id="days-together">0</strong>
+                    hari.
+                </p>
+
+                <span>💖</span>
+
+            </div>
+
+            <p class="closing">
+                Dengan penuh cinta,<br>
+                <strong id="signature"></strong> ❤️
+            </p>
+
+            <button id="music-button" class="music-button"
+                    type="button">
+                🎵 Putar Musik
+            </button>
+
+            <button id="back-button" class="back-button"
+                    type="button">
+                ↩ Kembali
+            </button>
+
+            <p class="footer-text">
+                Setiap hari bersamamu adalah cerita
+                yang ingin terus aku tulis. 💕
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Musik romantis -->
+    <audio id="love-music" loop preload="none"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

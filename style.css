@@ -1,0 +1,375 @@
+/* Pengaturan dasar */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #ffd1dc
+        );
+
+    color: #6b1738;
+
+    overflow-x: hidden;
+}
+
+
+/* Hati yang berjatuhan */
+
+#heart-container {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.falling-heart {
+    position: absolute;
+
+    top: -40px;
+
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-40px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* Kontainer utama */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 15px;
+}
+
+
+/* Kartu */
+
+.card {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 30px 25px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(126, 20, 63, 0.22);
+
+    text-align: center;
+
+    animation: appear 0.7s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* Judul dan teks */
+
+.main-heart {
+    font-size: 65px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+h1 {
+    font-size: 28px;
+    margin: 12px 0;
+
+    color: #d6336c;
+}
+
+.subtitle {
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    color: #8c4560;
+}
+
+
+/* Formulir */
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+
+    margin: 12px 0 7px;
+}
+
+input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #f2b5ca;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+    font-family: inherit;
+
+    background: #fff9fb;
+
+    color: #6b1738;
+}
+
+input:focus {
+    border-color: #e83e8c;
+
+    box-shadow:
+        0 0 0 3px rgba(232, 62, 140, 0.12);
+}
+
+
+/* Tombol */
+
+button {
+    border: none;
+    border-radius: 12px;
+
+    padding: 14px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.open-button {
+    margin-top: 24px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #ff4d88, #e91e63);
+
+    box-shadow:
+        0 7px 18px rgba(233, 30, 99, 0.2);
+}
+
+.open-button:hover {
+    opacity: 0.9;
+}
+
+.footer-text {
+    margin-top: 25px;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    color: #a45b78;
+}
+
+
+/* Surat cinta */
+
+.letter-card {
+    max-width: 540px;
+}
+
+.envelope {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.greeting {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    color: #d6336c;
+}
+
+.letter-content {
+    text-align: left;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    white-space: pre-line;
+
+    padding: 20px;
+
+    background: #fff4f8;
+
+    border-left: 4px solid #ff6b9a;
+    border-radius: 12px;
+}
+
+.counter-box {
+    margin-top: 22px;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background: #ffe3ed;
+    border-radius: 15px;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.counter-box span {
+    font-size: 22px;
+}
+
+.counter-box p {
+    margin: 0;
+}
+
+.counter-box strong {
+    color: #d6336c;
+    font-size: 19px;
+}
+
+.closing {
+    margin-top: 25px;
+
+    line-height: 1.8;
+}
+
+
+/* Tombol musik dan kembali */
+
+.music-button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #9c27b0, #e91e63);
+}
+
+.back-button {
+    width: 100%;
+
+    margin-top: 10px;
+
+    color: #c2185b;
+
+    background: #ffe3ed;
+}
+
+
+/* Tampilan HP */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 18px 12px;
+    }
+
+    .card {
+        padding: 25px 18px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
+
+    .letter-content {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
